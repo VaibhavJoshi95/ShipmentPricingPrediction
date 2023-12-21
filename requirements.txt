@@ -2,6 +2,7 @@ numpy
 pandas
 Flask
 seaborn
+plotly
 scikit-learn
 ipykernel
 -e .
