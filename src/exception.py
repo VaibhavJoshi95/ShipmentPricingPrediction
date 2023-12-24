@@ -1,5 +1,5 @@
 import sys
-from srcc.logger import logging
+from src.logger import logging
 
 
 
