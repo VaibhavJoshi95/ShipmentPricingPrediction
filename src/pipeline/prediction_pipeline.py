@@ -26,5 +26,9 @@ class PredictPipeline:
         except Exception as e:
             logging.info('Exception occured in Prediction Pipeline')
             raise CustomException(e,sys)
+        
+class CustomData:
+    def __int__(self,Qauntity_of_pack:int,Pack Price:float, Weight(Kilograms):float,Product_Insurance_USD:float,
+                Country:str,Shipment Mode:str):
 
 
