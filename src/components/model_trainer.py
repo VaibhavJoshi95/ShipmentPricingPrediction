@@ -12,10 +12,10 @@ import sys
 from dataclasses import dataclass
 
 @dataclass
-class ModelTrainerConfig():
+class ModelTrainerConfig:
         trained_model_file_path=os.path.join('artifact','model.pkl')
 
-class ModelTrainer():
+class ModelTrainer:
     def __init__(self):
           self.model_trainer_config = ModelTrainerConfig()
         
@@ -31,7 +31,7 @@ class ModelTrainer():
                 )
 
                 param_grid={
-                'n_estimators': [25, 50, 100],  
+                'n_estimators': [25, 50],  
                 'max_depth': [None, 10, 20, 30],  
                 'min_samples_split': [2, 5, 10],
                 'min_samples_leaf': [1, 2, 4]
@@ -49,7 +49,9 @@ class ModelTrainer():
 
                 logging.info(f'Best Random Forest Model Found, R2 Score: {best_model_score}')
 
-                save_object(file_path=self.model_trainer_config.trained_model_file_path, obj=best_rf_model)
+                save_object(
+                      file_path=self.model_trainer_config.trained_model_file_path, 
+                      obj=best_rf_model)
                 
 
 
