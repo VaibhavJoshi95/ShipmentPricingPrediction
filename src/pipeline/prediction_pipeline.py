@@ -11,10 +11,16 @@ class PredictPipeline:
 
     def predict(self,features):
         try:
-            preprocessor_ath=os.path.join('artifact','preprocessor.pkl')
+            preprocessor_path=os.path.join('artifact','preprocessor.pkl')
             model_path=os.path.join('artifact','model.pkl')
 
-            
+            preprocessor=load_object(preprocessor_path)
+            model=load_object(model_path)
+
+            data_scaled=preprocessor.transform(features)
+
+            pred=model.predict(data_scaled)
+            return pred            
             
                    
         except Exception as e:
