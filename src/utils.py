@@ -19,5 +19,4 @@ def save_object(file_path,obj):
     except Exception as e:
         logging.info('Error orccured while saving object')
         raise CustomException(e,sys)
-    
-    
+        
