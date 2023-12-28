@@ -48,7 +48,7 @@ class CustomData:
             Custome_data_input_dict= {
                 'Country':[self.Country],
                 'Shipment_Mode':[self.Shipment_Mode],
-                'Quantity_of_pack':[self.Qauntity_of_pack],
+                'Qauntity_of_pack':[self.Qauntity_of_pack],
                 'Pack_Price':[self.Pack_Price],
                 'Weight_Kg':[self.Weight_Kg],
                 'Product_Insurance_USD':[self.Product_Insurance_USD],
