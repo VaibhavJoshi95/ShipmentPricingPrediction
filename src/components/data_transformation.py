@@ -24,15 +24,15 @@ class DataTransformation:
         try:
             logging.info('Data Transformation initiated')
 
-            categorical_cols=['Country', 'Shipment Mode']
-            numerical_cols=['Qauntity_of_pack', 'Pack Price', 'Weight (Kilograms)','Product_Insurance_USD']
+            categorical_cols=['Country', 'Shipment_Mode']
+            numerical_cols=['Qauntity_of_pack', 'Pack_Price', 'Weight_kG','Product_Insurance_USD']
 
             Country_categories=['Rwanda', 'Vietnam', "Côte dIvoire", 'Burundi', 'Mozambique','Uganda', 'Zambia', 'Namibia', 'Congo, DRC', 'Kenya', 'Zimbabwe',
                                 'Ethiopia', 'Guyana', 'Nigeria', 'Sudan', 'South Africa','Guatemala', 'Ghana', 'Haiti', 'Botswana', 'Pakistan',
                                 'Dominican Republic', 'Liberia', 'Swaziland', 'Afghanistan','Cameroon', 'Malawi', 'Lesotho', 'Senegal', 'Tanzania',
                                 'South Sudan', 'Libya', 'Mali', 'Angola', 'Benin', 'Guinea','Togo', 'Sierra Leone']
             
-            Shipment_categories=['Air', 'Truck', 'Air Charter', 'Ocean']
+            Shipment_Mode_categories=['Air', 'Truck', 'Air Charter', 'Ocean']
 
             logging.info('Pipeline Initiated')
 
@@ -50,7 +50,7 @@ class DataTransformation:
             cat_pipeline=Pipeline(
                 steps=[
                     ('imputer',SimpleImputer(strategy='most_frequent')),
-                    ('encoder',OrdinalEncoder(categories=[Country_categories,Shipment_categories])),
+                    ('encoder',OrdinalEncoder(categories=[Country_categories,Shipment_Mode_categories])),
                     ('scaler',StandardScaler())
                 ]
             )

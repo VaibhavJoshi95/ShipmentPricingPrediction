@@ -1,12 +1,13 @@
 from flask import Flask,request,render_template,jsonify
 from src.pipeline.prediction_pipeline import CustomData,PredictPipeline
 
+
 application=Flask(__name__)
 
 app=application
 
-@app.route('/')
 
+@app.route('/')
 def home_page():
     return render_template('index.html ')
 
@@ -23,8 +24,7 @@ def predict_datapoint():
             Qauntity_of_pack = int(request.form.get('Qauntity_of_pack')),
             Pack_Price = float(request.form.get('Pack_Price')),         
             Weight_Kg = int(request.form.get('Weight_Kg')),       
-            Product_Insurance_USD = float(request.form.get('Product_Insurance_USD')),
-            
+            Product_Insurance_USD = float(request.form.get('Product_Insurance_USD'))
         )
         final_new_data=data.get_data_as_dataframe()
         predict_pipeline=PredictPipeline()
@@ -35,6 +35,8 @@ def predict_datapoint():
         return render_template('results.html',final_result=results)
     
     
+
+
 
 
 if __name__=='__main__':

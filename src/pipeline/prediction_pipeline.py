@@ -28,7 +28,7 @@ class PredictPipeline:
             raise CustomException(e,sys)
         
 class CustomData:
-    def __int__(self,
+    def __init__(self,
                 Country:str,
                 Shipment_Mode:str,
                 Qauntity_of_pack:int,
@@ -52,7 +52,7 @@ class CustomData:
                 'Pack_Price':[self.Pack_Price],
                 'Weight_Kg':[self.Weight_Kg],
                 'Product_Insurance_USD':[self.Product_Insurance_USD],
-            }
+             }
             df = pd.DataFrame(Custome_data_input_dict)
             logging.info('Data Frame Gathered')
             return df
