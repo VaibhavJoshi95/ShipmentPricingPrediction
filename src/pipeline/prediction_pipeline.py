@@ -21,8 +21,8 @@ class PredictPipeline:
 
             pred=model.predict(data_scaled)
             return pred            
-            
-                   
+
+
         except Exception as e:
             logging.info('Exception occured in Prediction Pipeline')
             raise CustomException(e,sys)
@@ -48,7 +48,7 @@ class CustomData:
             Custome_data_input_dict= {
                 'Country':[self.Country],
                 'Shipment_Mode':[self.Shipment_Mode],
-                'Quantity_of_Pack':[self.Qauntity_of_pack],
+                'Quantity_of_pack':[self.Qauntity_of_pack],
                 'Pack_Price':[self.Pack_Price],
                 'Weight_Kg':[self.Weight_Kg],
                 'Product_Insurance_USD':[self.Product_Insurance_USD],

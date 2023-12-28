@@ -25,7 +25,7 @@ class DataTransformation:
             logging.info('Data Transformation initiated')
 
             categorical_cols=['Country', 'Shipment_Mode']
-            numerical_cols=['Qauntity_of_pack', 'Pack_Price', 'Weight_kG','Product_Insurance_USD']
+            numerical_cols=['Qauntity_of_pack', 'Pack_Price', 'Weight_Kg','Product_Insurance_USD']
 
             Country_categories=['Rwanda', 'Vietnam', "Côte dIvoire", 'Burundi', 'Mozambique','Uganda', 'Zambia', 'Namibia', 'Congo, DRC', 'Kenya', 'Zimbabwe',
                                 'Ethiopia', 'Guyana', 'Nigeria', 'Sudan', 'South Africa','Guatemala', 'Ghana', 'Haiti', 'Botswana', 'Pakistan',
