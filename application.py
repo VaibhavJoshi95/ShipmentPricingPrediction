@@ -12,7 +12,7 @@ def home_page():
 
 @app.route('/predict',method=['GET','PUSH'])
 
-def predict_datapint():
+def predict_datapoint():
     if request.method =='GET':
         return render_template('form.html')
     
