@@ -28,7 +28,8 @@ class PredictPipeline:
             raise CustomException(e,sys)
         
 class CustomData:
-    def __int__(self,Country:str,
+    def __int__(self,
+                Country:str,
                 Shipment_Mode:str,
                 Qauntity_of_pack:int,
                 Pack_Price:float,
