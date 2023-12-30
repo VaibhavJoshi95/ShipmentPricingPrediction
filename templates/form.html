@@ -1,117 +1,140 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shipment Price Prediction</title>
-    <link rel = "stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="imgg">
-            <img src="E:\Ineuron-DS Course\Interships\ShipmentPricingPrediction\templates\tracking.jpg">
-        </div>
-
-        <h1> Shipment </h1>
-        <h4> Fill the Fields to Predict the Shipment Charges.</h4>
-
-        <form action="{{url_for ('predict_datapoint')}}" method='POST'>
-            <div class="row mb-3">
-                <div class="col form-group">
-                    <label for="Qauntity_of_pack">Qauntity in Pack:</label>
-                    <input type="text" id="Qauntity_of_pack" name='Qauntity_of_pack' placeholder="Enter Qauntity_of_pack">
-                </div>
-
-                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-
-                <div class="col form-group">
-                    <label for="Pack_Price">Price per Pack:</label>
-                    <input type="text" id="Pack_Price" name='Pack_Price' placeholder="Enter Price of per Pack">
-                </div>
-           
-
-                
-                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-
-                <div class="col form-group">
-                    <label for="Weight_Kg">Weight:</label>
-                    <input type="text" id="Weight_Kg" name='Weight_Kg' placeholder="Enter Weight in Kg">
-                </div>
-
-                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-
-                <div class="col form-group">
-                    <label for="Product_Insurance_USD">Product Insurance:</label>
-                    <input type="text" id="Product_Insurance_USD" name='Product_Insurance_USD' placeholder="Enter Insurance amt in USD ">
-                </div>
-
-                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-
-                <div class="col form-group">
-                    <label for="Country">Country:</label>
-                    <select id="Country" name="Country" aria-placeholder="select Country Name">
-                        <option value="Rwanda">Rwanda</option>
-                        <option value="Vietnam">Vietnam</option>
-                        <option value="Côte dIvoire">Côte d'Ivoire</option>
-                        <option value="Burundi">Burundi</option>
-                        <option value="Mozambique">Mozambique</option>
-                        <option value="Uganda">Uganda</option>
-                        <option value="Zambia">Zambia</option>
-                        <option value="Namibia">Namibia</option>
-                        <option value="Congo, DRC">Congo, DRC</option>
-                        <option value="Kenya">Kenya</option>
-                        <option value="Zimbabwe">Zimbabwe</option>
-                        <option value="Ethiopia">Ethiopia</option>
-                        <option value="Guyana">Guyana</option>
-                        <option value="Nigeria">Nigeria</option>
-                        <option value="Sudan">Sudan</option>
-                        <option value="South Africa">South Africa</option>
-                        <option value="Guatemala">Guatemala</option>
-                        <option value="Ghana">Ghana</option>
-                        <option value="Haiti">Haiti</option>
-                        <option value="Botswana">Botswana</option>
-                        <option value="Pakistan">Pakistan</option>
-                        <option value="Dominican Republic">Dominican Republic</option>
-                        <option value="Liberia">Liberia</option>
-                        <option value="Swaziland">Swaziland</option>
-                        <option value="Afghanistan">Afghanistan</option>
-                        <option value="Cameroon">Cameroon</option>
-                        <option value="Malawi">Malawi</option>
-                        <option value="Lesotho">Lesotho</option>
-                        <option value="Senegal">Senegal</option>
-                        <option value="Tanzania">Tanzania</option>
-                        <option value="South Sudan">South Sudan</option>
-                        <option value="Libya">Libya</option>
-                        <option value="Mali">Mali</option>
-                        <option value="Angola">Angola</option>
-                        <option value="Benin">Benin</option>
-                        <option value="Guinea">Guinea</option>
-                        <option value="Togo">Togo</option>
-                        <option value="Sierra Leone">Sierra Leone</option>
-                    </select>
-                </div>
-
-                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-            
-                <div class="col form-group">
-                    <label for="Shipment_Mode">Shipment_Mode:</label>
-                    <select id="Shipment_Mode" name="Shipment_Mode">
-                        <option value="Air">Air</option>
-                        <option value="Truck">Truck</option>
-                        <option value="Air Charter">Air Chartere</option>
-                        <option value="Ocean">Ocean</option>
-                    </select>
-                </div>
-                <div style="clear:both"></div>
-                    <input type="submit" value="submit">
+  <head>
+    <title>Shipment Predictin Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    border: 2px solid;  
+        }
+        
+        .img {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        
+        h2{
+            text-align: center;
+            font-style: italic;    
+        }
+        
+        h5 {
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+        }
+        
+        .d-grid {
+            text-align: center;
+        }
+        div{
+            margin-bottom: 10px;
+            align-items: center;
+            text-align: center;
+            padding-left: 250px;
+        }
+        #sub{
+            text-align: center;
+            padding-right: 500px;
+        }
+    </style>
+  </head>
+<body>
+    <div class="img">
+        <img src="E:\Ineuron-DS Course\Interships\ShipmentPricingPrediction\templates\tracking.jpg">
+    </div>
+    <h2>Shipment</h2>
+    <h5> Fill the Fields to Predict the Shipment Charges</h5>
+    <form class="mt-5 p-5" action="{{url_for('predict_datapoint')}}" method="POST">
+        <div class="row">
+            <div class="col-sm-4">
+                <label for="Qauntity_of_pack">Qauntity_of_pack:</label>
+                <input type="text" id="Qauntity_of_pack" name="Qauntity_of_pack" placeholder="Enter Quantity">
             </div>
-
-        </form>
-            
-    </body>
+            <div class="col-sm-4">
+                <label for="Pack_Price">Pack_Price:</label>
+                <input type="text" id="Pack_Price" name="Pack_Price" placeholder="Enter Price of Pack">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class=" col-sm-4">  
+                <label for="Weight_Kg">Weight_Kg:</label>
+                <input type="number" id="Weight_Kg" name="Weight_Kg" placeholder="Enter Weight in Kg ">
+            </div>             
+            <div class=" col-sm-4">  
+                <label for="Product_Insurance_USD">Product_Insurance:</label>
+                <input type="number" id="Product_Insurance_USD" name="Product_Insurance_USD" placeholder="Enter amt in USD ">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <label for="Country">Country:</label>
+                <select id="Country" name="Country">
+                    <option value="Rwanda">Rwanda</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="Côte dIvoire">Côte dIvoire</option>
+                    <option value="Burundi">Burundi</option>
+                    <option value="Mozambique">Mozambique</option>
+                    <option value="Uganda">Uganda</option>
+                    <option value="Zambia">Zambia</option>
+                    <option value="Namibia">Namibia</option>
+                    <option value="Congo, DRC">Congo, DRC</option>
+                    <option value="Kenya">Kenya</option>
+                    <option value="Zimbabwe">Zimbabwe</option>
+                    <option value="Ethiopia">Ethiopia</option>
+                    <option value="Guyana">Guyana</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="Sudan">Sudan</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="Guatemala">Guatemala</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Haiti">Haiti</option>
+                    <option value="Botswana">Botswana</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Dominican Republic">Dominican Republic</option>
+                    <option value="Liberia">Liberia</option>
+                    <option value="Swaziland">Swaziland</option>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Cameroon">Cameroon</option>
+                    <option value="Malawi">Malawi</option>
+                    <option value="Lesotho">Lesotho</option>
+                    <option value="Senegal">Senegal</option>
+                    <option value="Tanzania">Tanzania</option>
+                    <option value="South Sudan">South Sudan</option>
+                    <option value="Libya">Libya</option>
+                    <option value="Mali">Mali</option>
+                    <option value="Angola">Angola</option>
+                    <option value="Benin">Benin</option>
+                    <option value="Guinea">Guinea</option>
+                    <option value="Togo">Togo</option>
+                    <option value="Sierra Leone">Sierra Leone</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label for="Shipment_Mode">Shipment_Mode:</label>
+                <select id="Shipment_Mode" name="Shipment_Mode">
+                    <option value="Air">Air</option>
+                    <option value="Truck">Truck</option>
+                    <option value="Air Charter">Air Charter</option>
+                    <option value="Ocean">Ocean</option>  
+                </select>
+            </div>
+        </div>
+        <div id="sub">
+            <div style="clear:both;"></div>
+            <div class=" d-grid gap-2 col-6 mx-auto ">
+            <input type="submit"  value="Submit">
+            </div>
+        </div>
+    </form>
+</body>
 </html>
