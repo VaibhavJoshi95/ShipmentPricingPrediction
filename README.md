@@ -58,7 +58,7 @@ Link for video regarding to the explanation of the project :
 https://drive.google.com/file/d/1mZZ5MC4XlN1SfEYY6fTsfdibw82kteBD/view?usp=sharing
 
 Link for App Documentation :    
-https://github.com/VaibhavJoshi95/Internship-InsurancePremiumPrediction/tree/main/Documents
+https://github.com/VaibhavJoshi95/ShipmentPricingPrediction/tree/main/Documents
 
 
 ## FAQ
