@@ -80,7 +80,7 @@ https://www.kaggle.com/datasets/divyeshardeshana/supply-chain-shipment-pricing-d
 #### How training was done or what models were used?
 
 Data pipeline was created to implement data scaling, Ordinal encoding and an estimator to prevent any data leakage. 
-GradientBoost model was used as the best estimator which was then used for production. 
+RandomForest model was used as the best estimator which was then used for production. 
 
 #### What are the different stages of deployment?
 
