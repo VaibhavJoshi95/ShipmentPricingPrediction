@@ -55,7 +55,7 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 
 ## Appendix
 Link for video regarding to the explanation of the project :  
-https://drive.google.com/file/d/1mZZ5MC4XlN1SfEYY6fTsfdibw82kteBD/view?usp=sharing
+https://github.com/VaibhavJoshi95/ShipmentPricingPrediction/blob/main/Documents/Shipment%20Predictin%20Form%20-%20Google%20Chrome%202024-01-02%2010-51-49.mp4
 
 Link for App Documentation :    
 https://github.com/VaibhavJoshi95/ShipmentPricingPrediction/tree/main/Documents
